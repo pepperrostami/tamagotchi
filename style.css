@@ -1,0 +1,14 @@
+.tamagotchi {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.pet {
+    margin-bottom: 20px;
+}
+
+.controls button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
