@@ -11,6 +11,8 @@ PHASE 1: Browser Load: Default Screen
             -Boredom: 0 - default value - will increase and decrease as game is played
             -Health: 0 - default value - will increase and decrease as game is played
             -Behavior: 0 - default value - will increase and decrease as game is played
+            -Rest: 0 - default value - will increase and decrease as game is played
+            -Love: 0 - default value - will increase and decrease as game is played
     Pop-Up: “would you like to become the proud parent of a baby tamagotchi?”
         -If Y: Move to phase 2
         -If N: new pop-up:
@@ -27,6 +29,8 @@ PHASE 2:
             -Boredom: 0 - default value - will increase at random and decrease as game is played, tamagotchi is played with
             -Health: 0 - default value - will decrease at random and increase as game is played, tamagotchi is given medicine
             -Behavior: 0 - default value - will decrease at random and increase as game is played, tamagotchi is disciplined
+            -Rest: 0 - default value - will increase and decrease as game is played
+            -Love: 0 - default value - will increase and decrease as game is played
     Pop-up:
 	    - give your new baby a name! Open field_________
 	    - User types in baby’s name and enter or arrow
@@ -42,5 +46,6 @@ PHASE 3:- Move to phase 3
         -Boredom: 0 - default value - will increase and decrease as game is played
         -Health: 0 - default value - will increase and decrease as game is played
         -Behavior: 0 - default value - will increase and decrease as game is played
-        -Exercise: 0 - default value - will increase and decrease as game is played
+        -Rest: 0 - default value - will increase and decrease as game is played
+        -Love: 0 - default value - will increase and decrease as game is played
     - Baby’s name appears on stats board

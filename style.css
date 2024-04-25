@@ -8,91 +8,89 @@
   font-style: normal;
 } */
 
-body {
-    border: 1px solid red;
-    margin: 0px;
-}
-.pic {
-    border: 1px solid red;
-    margin: -100px;
-}
-.tamagotchi {
+/*Defining shared styles for action buttons.*/
+    .buttons button {
+        height: 125px;
+        font-size: 40px;
+        font-family: orbitron, sans-serif;
+        font-weight: 900;
+        color: white;
+        background-color: hotpink;
+        border-radius: 50%;
+        margin: 20px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+
+/*Defining shared styles for status bars.*/
+    .status-bar {
+        font-size: 16px;
+        background-color: #eee;
+        height: 50px;
+        width: 20%;
+        font-family: orbitron, sans-serif;
+        font-weight: 900;
+        display: inline-block;
+        padding-top: 25px;
+        padding-left: 10px;
+    }
+/*Defining specific styles for action buttons.*/
+        #feed, #play, #cure, #lullaby {
+            font-family: orbitron, sans-serif;
+        }
+
+/*Defining specific styles for status bars.*/
+    .status {
+        font-family: orbitron, sans-serif;
+        font-weight: 900;
+        margin-left: 20%;
+    }
+
+/*Defining specific style for header.*/
+.header {
     text-align: center;
-    margin-top: 50px;
-    border: 1px solid red;
-}
-.pet {
-    margin-bottom: 20px;
-    border: 1px solid red;
-}
-#a {
-    background-color: transparent;
-    border: none;
-    color: hotpink;
-    font-size: 36px;
-    position: absolute;
-    top: 708px;
-    left: 170px;
-    font-family: orbitron, sans-serif;
-    font-weight: 900;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-#b {
-    background-color: transparent;
-    border: none;
-    color: hotpink;
-    font-size: 36px;
-    position: absolute;
-    top: 728px;
-    left: 253px;
-    font-family: orbitron, sans-serif;
-    font-weight: 900;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-#c {
-    background-color: transparent;
-    border: none;
-    color: hotpink;
-    font-size: 36px;
-    position: absolute;
-    top: 708px;
-    left: 332px;
-    font-family: orbitron, sans-serif;
-    font-weight: 900;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.pet-container {
-    position: relative;
-    display: inline-block;
 }
 
-.pet-container img {
-    max-width: 100%;
+/*Defining specific style for logo.*/
+/*logo is an image of the Tamagotchi logo I pulled from the internet, adjusted in Photoshop to match the color of the toy, and then put on tumblr so I could pull the link to my html*/
+#logo {
     display: block;
-    width: 100%;
-    max-width: 200%;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 500px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
-.buttons button:active {
+/*Defining specific styles for the tamagotchi container.*/
+.tamagotchi {
+    position: relative;
+    background-image: url('https://64.media.tumblr.com/a8bd77e1ab2a9c9e67a3a217fcfab2ad/663fcee30b7e2c09-b6/s540x810/9a0ea448af16925717990e93adeef7675c6a695c.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
+    text-align: center;
+    height: 1150px;
+}
+
+/*Defining specific styles for the buttons container.*/
+.buttons {
+    position: absolute;
+    left: 30%;
+    right: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 500px;
+    max-width: 100%;
+    height: 400px;
+    border: 10px hotpink;
+}
+
+
+/* REVISIT- NOTE TO SELF: found this on W3- active states to add to buttons so when they are clicked, there is a visual indication. Could not get this to actually work.
+    .buttons button:active {
     background-color: #dddddd;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     transform: scale(0.95);
     opacity: 0.8;
-}
-
-/* adjust max width for smaller screens */
-@media (max-width: 600px) {
-    .pet-container img {
-        max-width: 100%;
-    }
-}
-
-.controls button {
-    margin: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: 1px solid red;
-}
+} */
