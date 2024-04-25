@@ -1,15 +1,5 @@
-/* // <uniquifier>: Use a unique and descriptive class name
-// <weight>: Use a value from 400 to 900
-
-.orbitron-<uniquifier> {
-  font-family: "Orbitron", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-} */
-
 /*Defining shared styles for action buttons.*/
-    .buttons button {
+    .buttons button{
         height: 125px;
         font-size: 40px;
         font-family: orbitron, sans-serif;
@@ -21,31 +11,31 @@
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     }
 
-/*Defining shared styles for status bars.*/
+/*Defining specific styles for status bars.*/
+.status {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+ /*Defining shared styles for status bars.*/
     .status-bar {
-        font-size: 16px;
-        background-color: #eee;
+        font-size: 26px;
+        border: 2px solid black;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        background-color: hotpink;
         height: 50px;
-        width: 20%;
+        width: 400px;
         font-family: orbitron, sans-serif;
         font-weight: 900;
-        display: inline-block;
-        padding-top: 25px;
-        padding-left: 10px;
-        margin-right: 5px;
+        padding: 10px;
+        margin: 10px;
     }
 /*Defining specific styles for action buttons.*/
         #feed, #play, #cure, #lullaby {
             font-family: orbitron, sans-serif;
+            margin-top: -30px;
         }
-
-/*Defining specific styles for status bars.*/
-    .status {
-        font-family: orbitron, sans-serif;
-        font-weight: 900;
-        margin-left: 20%;
-        margin-top: 20px;
-    }
 
 /*Defining specific style for header.*/
 .header {
@@ -68,18 +58,20 @@
     position: relative;
     background-image: url('https://64.media.tumblr.com/a8bd77e1ab2a9c9e67a3a217fcfab2ad/663fcee30b7e2c09-b6/s540x810/9a0ea448af16925717990e93adeef7675c6a695c.jpg');
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: 30%;
+    background-position: center top;
+    background-size: contain;
     text-align: center;
-    height: 1150px;
+    height: 1100px;
 }
 
 /*Defining specific styles for the buttons container.*/
 .buttons {
-    position: absolute;
     left: 30%;
     right: 30%;
-    display: block;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     max-height: 500px;

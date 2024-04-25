@@ -1,61 +1,49 @@
-//create Tamagotchi object constructor function
-    function Tamagotchi () {
-          this.hunger = 5;
-          this.boredom = 5;
-          this.illness = 5;
-          this.sleepiness = 5;
+//defining Tamagotchi class using constructor function, so property values will be called on any time a new tamagotchi is created. Properties for tamagotchi correspond to status bars for hunger, boredom, illness, sleepiness.
+    class Tamagotchi {
+        constructor () {
+        this.hunger = 5;
+        this.boredom = 5;
+        this.illness = 5;
+        this.sleepiness = 5;
+        }
+    }
+//initalizing new instance of a tamagotchi object using the class defined previously.
+    let tamagotchi = new Tamagotchi();
+
+//Functions and event listeners to update status bars
+    document.addEventListener("DOMContentLoaded", function () {
+        let hunger = 5;
+        let happiness = 5;
+        let health = 5;
+        let energy = 5;
+
+    function updateStatusBars() {
+        document.getElementById("hungerValue").textContent = hunger;
+        document.getElementById("happinessValue").textContent = happiness;
+        document.getElementById("healthValue").textContent = health;
+        document.getElementById("energyValue").textContent = energy;
     }
 
-//Functions for each action's effect on the status bars
-    Tamagotchi.prototype.feed = function() {
-        if (this.hunger > 10) {
-            this.hunger--;
-        }
-        this.updateStatusBars();
-    }
+    document.getElementById("feed").addEventListener("click", function() {
+        if (hunger < 10) hunger--;
+        if (happiness < 10) happiness++;
+        updateStatusBars();
+    });
 
-    Tamagotchi.prototype.play = function() {
-        if (this.boredom > 0) {
-            this.boredom--;
-        }
-        this.updateStatusBars();
-    }
-    Tamagotchi.prototype.cure = function() {
-        if (this.illness > 0) {
-          this.illness--;
-        }
-        this.updateStatusBars();
-      }
-      
-    Tamagotchi.prototype.lullaby = function() {
-        if (this.sleepiness < 10) {
-          this.sleepiness++;
-        }
-        this.updateStatusBars();
-    }
-      
-    Tamagotchi.prototype.updateStatusBars = function() {
-        document.getElementById('hunger-bar').style.width = (this.hunger * 10) + '%';
-        document.getElementById('boredom-bar').style.width = (this.boredum * 10) + '%';
-        document.getElementById('illness-bar').style.width = (this.illness * 10) + '%';
-        document.getElementById('sleep-bar').style.width = (this.sleepiness * 10) + '%';
-      }
-    
-//bind click event listeners to buttons
-document.getElementById('feed').addEventListener('click', function() {
-    Tamagotchi.feed();
-});
-
-document.getElementById('play').addEventListener('click', function() {
-    Tamagotchi.play();
-});
-
-document.getElementById('cure').addEventListener('click', function() {
-    Tamagotchi.cure();
-});
-document.getElementById('lullaby').addEventListener('click', function() {
-    Tamagotchi.lullaby();
-});
-
-//initalize new tamagotchi object
-let tamagotchi = new Tamagotchi();
+    document.getElementById("play").addEventListener("click", function() {
+        if (happiness <10) happiness++;
+        if (energy > 0) energy--;
+        updateStatusBars();
+    });
+    document.getElementById("cure").addEventListener("click", function () {
+        if (health < 10) health++;
+        if (happiness < 10) happiness++;
+        updateStatusBars();
+    });
+    document.getElementById("lullaby").addEventListener("click", function() {
+        if (energy > 0) energy--;
+        if (happiness < 10) happiness++;
+        updateStatusBars();
+    });
+    updateStatusBars();
+    });

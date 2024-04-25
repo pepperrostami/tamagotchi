@@ -12,11 +12,12 @@
 </head>
 
 <body>
-
+    <!-- Header section containing an image of the Tamagotchi logo using <img> tag. -->
     <div class="header">
         <img id="logo" src="https://64.media.tumblr.com/befc9d8f70b56de8c45d188a00cfe152/f6a6b536489e1a55-29/s540x810/170f4f797486440308869711103c5e27743797ef.jpg" alt="Tamagotchi Logo">
     </div>
 
+    <!-- Section of Tamagotchi buttons for feeding, playing, giving medicine, and playing a lullaby to the Tamagotchi so it falls asleep. -->
     <div class="tamagotchi">
         <div class="buttons">
             <button id="feed">FEED</button>
@@ -26,13 +27,14 @@
         </div>
     </div>
 
+    <!-- Status bars for the Tamagotchi's hunger, boredom, illness, and sleepiness. -->
     <div class="status">
-        <div class="status-bar" id="hunger-bar">HUNGER</div>
-        <div class="status-bar" id="boredom-bar">BOREDOM</div>
-        <div class="status-bar" id="illness-bar">ILLNESS</div>
-        <div class="status-bar" id="sleep-bar">SLEEPINESS</div>
+        <div id="hunger" class="status-bar">HUNGER: <span id="hungerValue">5</span></div>
+        <div id="happiness" class="status-bar">HAPPINESS: <span id="happinessValue">5</span></div>
+        <div id="health" class="status-bar">HEALTH: <span id="healthValue">5</span></div>
+        <div id="energy" class="status-bar">ENERGY: <span id="energyValue">5</span></div>
      </div>
-
+     <script src="script.js"></script>
 </body>
 
 </html>
