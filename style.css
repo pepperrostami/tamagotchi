@@ -32,6 +32,7 @@
         display: inline-block;
         padding-top: 25px;
         padding-left: 10px;
+        margin-right: 5px;
     }
 /*Defining specific styles for action buttons.*/
         #feed, #play, #cure, #lullaby {
@@ -43,6 +44,7 @@
         font-family: orbitron, sans-serif;
         font-weight: 900;
         margin-left: 20%;
+        margin-top: 20px;
     }
 
 /*Defining specific style for header.*/
