@@ -153,6 +153,30 @@ document.addEventListener("DOMContentLoaded", function () {
                 bar.style.borderColor = "black";
             });
         }
+
+        if (hunger === 0) {
+            document.getElementById("hunger").style.display = "none";
+        } else {
+            document.getElementById("hunger").style.display = "block";
+        }
+
+        if (happiness === 0) {
+            document.getElementById("happiness").style.display = "none";
+        } else {
+            document.getElementById("happiness").style.display = "block";
+        }
+
+        if (health === 0) {
+            document.getElementById("health").style.display = "none";
+        } else {
+            document.getElementById("health").style.display = "block";
+        }
+        
+        if (energy === 0) {
+            document.getElementById("energy").style.display = "none";
+        } else {
+            document.getElementById("energy").style.display = "block";
+        }
     };
 
     //Setting up event listeners for the buttons on the webpage (feed, play, cure, lullaby) and defining functions to update the Tamagotchi's properties based on the button clicks.
@@ -269,7 +293,7 @@ document.addEventListener("DOMContentLoaded", function () {
             win.style.display = "none";
         }
     };
-    
+
     // Call the function initially
     updateGifVisibility();
     
