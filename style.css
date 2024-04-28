@@ -1,15 +1,15 @@
 /*Defining shared styles for action buttons.*/
-    .buttons button{
-        height: 125px;
-        font-size: 40px;
-        font-family: orbitron, sans-serif;
-        font-weight: 900;
-        color: white;
-        background-color: hotpink;
-        border-radius: 50%;
-        margin: 20px;
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    }
+.buttons button {
+    height: 125px;
+    font-size: 40px;
+    font-family: orbitron, sans-serif;
+    font-weight: 900;
+    color: white;
+    background-color: hotpink;
+    border-radius: 50%;
+    margin: 20px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 /*Defining specific styles for status bars.*/
 .status {
@@ -18,30 +18,77 @@
     flex-wrap: wrap;
     margin-top: 20px;
 }
- /*Defining shared styles for status bars.*/
-    .status-bar {
-        font-size: 26px;
-        border: 2px solid black;
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-        background-color: hotpink;
-        height: 50px;
-        width: 400px;
-        font-family: orbitron, sans-serif;
-        font-weight: 900;
-        padding: 10px;
-        margin: 10px;
-    }
+
+/*Defining shared styles for status bars.*/
+.status-bar {
+    font-size: 26px;
+    border: 2px solid black;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: hotpink;
+    height: 50px;
+    width: 400px;
+    font-family: orbitron, sans-serif;
+    font-weight: 900;
+    padding: 10px;
+    margin: 10px;
+}
+
 /*Defining specific styles for action buttons.*/
-        #feed, #play, #cure, #lullaby {
-            font-family: orbitron, sans-serif;
-            margin-top: -30px;
-        }
+#feed,
+#play,
+#cure,
+#lullaby {
+    font-family: orbitron, sans-serif;
+    margin-top: -30px;
+    padding: 20px;
+}
+
+#egg,
+#caterpillar,
+#cocoon,
+#butterfly,
+#win {
+    position: absolute;
+    top: calc(-80px + 50%);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    width: 18%;
+    max-width: 283.8px;
+}
 
 /*Defining specific style for header.*/
 .header {
     text-align: center;
 }
 
+@keyframes moveLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-200%); } /* Adjust the value as needed to move it out of frame */
+}
+
+@keyframes moveAndFade {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-600%);
+        opacity: 0;
+    }
+}
+.animateWin {
+    animation: moveAndFade 10s linear forwards;
+}
+
+#win {
+    animation: moveLeft 5s linear forwards; /* Adjust the duration as needed */
+}
+
+/*Defining specific style for name & age.*/
 .tamagotchi-info {
     position: absolute;
     top: 20px;
@@ -53,6 +100,7 @@
     font-size: 24px;
 }
 
+/*Defining specific style for name & age.*/
 .tamagotchi-info input {
     font-size: 18px;
     padding: 5px;
@@ -80,7 +128,7 @@
 /*Defining specific styles for the tamagotchi container.*/
 .tamagotchi {
     position: relative;
-    background-image: url('https://64.media.tumblr.com/a8bd77e1ab2a9c9e67a3a217fcfab2ad/663fcee30b7e2c09-b6/s540x810/9a0ea448af16925717990e93adeef7675c6a695c.jpg');
+    background-image: url('https://64.media.tumblr.com/5c2611691378fe716a13d76b289bd8da/c26cb1404eaa7a2a-0f/s540x810/a7ce0d191d095c32341353270f1197e334b8b2b6.jpg');
     background-repeat: no-repeat;
     background-position: center top;
     background-size: contain;
@@ -105,7 +153,7 @@
 }
 
 
-/* REVISIT- NOTE TO SELF: found this on W3- active states to add to buttons so when they are clicked, there is a visual indication. Could not get this to actually work.
+/* REVISIT- NOTE TO SELF: found this on W3- active states to add to buttons so when they are clicked, there is a visual indication. Could not get this to actually work from what I could tell.
     .buttons button:active {
     background-color: #dddddd;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
