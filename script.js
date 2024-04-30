@@ -323,4 +323,24 @@ document.addEventListener("DOMContentLoaded", function () {
         hideWelcomeWindow();
         activateGameFunctions();
     });
+
+    let isMusicPlaying = false;
+    const playMusic = () => {
+        if (isMusicPlaying) return;
+        const audio = new Audio('Donna Summer  -  Spring Affair.mp3');
+        audio.play();
+        isMusicPlaying = true;
+        document.getElementById('soundtrackButton').removeEventListener('click', playMusic);
+        document.getElementById('soundtrackButton').addEventListener('click', stopMusic);
+    };
+
+    const stopMusic = () => {
+        if (!isMusicPlaying) return;
+        audio.pause();
+        isMusicPlaying = false;
+        document.getElementById('soundtrackButton').textContent = 'Soundtrack';
+        document.getElementById('soundtrackButton').removeEventListener('click', stopMusic);
+        document.getElementById('soundtrackButton').addEventListener('click', playMusic);
+        };
+        document.getElementById('soundtrackButton').addEventListener('click', playMusic);
 });

@@ -89,6 +89,16 @@
     animation: moveLeft 5s linear forwards; /* Adjust the duration as needed */
 }
 
+#soundtrackButton {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-align: center;
+    color: hotpink;
+    font-family: orbitron, sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+}
 /*Defining specific style for name & age.*/
 .tamagotchi-info {
     position: absolute;
