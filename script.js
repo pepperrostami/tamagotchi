@@ -16,36 +16,6 @@ let ageInMinutes = 0;
 //This line waits for the HTML document to finish loading before executing the code inside the function. It ensures that the JavaScript code only runs when the webpage is fully loaded.
 document.addEventListener("DOMContentLoaded", function () {
 
-    // const welcomeWindow = document.getElementById("welcomeWindow");
-    // const playButton = document.getElementById("playButton");
-
-    // const hideWelcomeWindow = () => {
-    //     welcomeWindow.style.display - "none";
-    // };
-
-    // const activateGameFunctions = () => {
-    //     updateStatusBars();
-    //     updateStatusAutomatically();
-    //     setInterval(updateAge, 60000);
-    //     setInterval(updateStatusAutomatically, 20000);
-    // };
-
-    // playButton.addEventListener("click", function () {
-    //     console.log("play button clicked");
-    //     hideWelcomeWindow();
-    //     activateGameFunctions();
-    // });
-
-    //***makes the other functions not work for some reason. Need to revisit. Prompt for user to start playing with the tamagotchi before all of the other automatic functions can run
-    // const startPlaying = confirm("Are you ready to start playing with your new tamagotchi?");
-    // if (startPlaying) {
-    //     updateStatusBars();
-    //     updateStatusAutomatically();
-
-    //     setInterval(updateAge, 60000);
-    //     setInterval(updateStatusAutomatically, 20000);
-    // }
-
     //This line defines a function called updateStatusBars that updates the status bars of the Tamagotchi based on its current properties.
     const updateStatusBars = () => {
         const { hunger, happiness, health, energy } = tamagotchi;
@@ -353,18 +323,4 @@ document.addEventListener("DOMContentLoaded", function () {
         hideWelcomeWindow();
         activateGameFunctions();
     });
-
-    //Setting up a timer that updates the Tamagotchi's age every minute (60,000 milliseconds).
-    // setInterval(updateAge, 60000);
-
-    //Calling the updateStatusBars function to initially set up the appearance of the webpage based on the Tamagotchi's properties.
-    // updateStatusBars();
-
-    //Calling the updateStatusAutomatically function to automatically update the Tamagotchi's properties over time, simulating its needs changing without user interaction.
-    // updateStatusAutomatically();
-
-    //Setting up a timer that automatically updates the Tamagotchi's properties every 20 seconds (20,000 milliseconds).
-    // setInterval(updateStatusAutomatically, 20000);
 });
-
-
