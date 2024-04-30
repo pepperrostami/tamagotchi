@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 bar.style.borderColor = "black";
             });
 
-            //This line checks if the Tamagotchi's happiness is 0, health is 10 (maximum), or hunger is 10 (maximum). If any of these conditions are true, it changes the appearance of the webpage to indicate that the Tamagotchi is in a critical state.
+            //Checks if the Tamagotchi's happiness is 0, health is 10 (maximum), or hunger is 10 (maximum). If any of these conditions are true, it changes the appearance of the webpage to indicate that the Tamagotchi is in a critical state.
         } else if (happiness === 0 || health === 0 || hunger === 10) {
             document.querySelector(".tamagotchi").style.backgroundImage = "url('https://64.media.tumblr.com/032f6b79deb5aabce2c6116114520f25/89c508b446d2dcd7-ff/s540x810/99e8bd14c5200ff7ec5c5521962e47dc8aa18405.jpg')";
             document.querySelector("#logo").src = "https://64.media.tumblr.com/5b43352b589b78ce5450487b35428f76/3034577bfb8ea1f4-a0/s540x810/db7a38fdca234d0bbe9107514694038a63c36430.jpg";

@@ -49,10 +49,9 @@
 #butterfly,
 #win {
     position: absolute;
-    top: 46%;
-    left: 46%;
-    right: 5%;
-    bottom: 5%;
+    top: 60.5%;
+    left: 50.5%;
+    transform: translate(-50%, -50%);
     z-index: 1;
     width: 9%;
     max-width: 141.9px;
