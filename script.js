@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 bar.style.borderColor = "black";
             });
 
-            //Checks if the Tamagotchi's happiness is 0, health is 10 (maximum), or hunger is 10 (maximum). If any of these conditions are true, it changes the appearance of the webpage to indicate that the Tamagotchi is in a critical state.
+        //Checks if the Tamagotchi's happiness is 0, health is 10 (maximum), or hunger is 10 (maximum). If any of these conditions are true, it changes the appearance of the webpage to indicate that the Tamagotchi is in a critical state.
         } else if (happiness === 0 || health === 0 || hunger === 10) {
             document.querySelector(".tamagotchi").style.backgroundImage = "url('https://64.media.tumblr.com/032f6b79deb5aabce2c6116114520f25/89c508b446d2dcd7-ff/s540x810/99e8bd14c5200ff7ec5c5521962e47dc8aa18405.jpg')";
             document.querySelector("#logo").src = "https://64.media.tumblr.com/5b43352b589b78ce5450487b35428f76/3034577bfb8ea1f4-a0/s540x810/db7a38fdca234d0bbe9107514694038a63c36430.jpg";
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 bar.style.borderColor = "darkgrey";
             });
 
-            //Defining default state.
+        //Defining default state.
         } else {
             document.body.style.backgroundColor = "";
             document.querySelector(".tamagotchi").style.backgroundImage = "url('https://64.media.tumblr.com/5c2611691378fe716a13d76b289bd8da/c26cb1404eaa7a2a-0f/s540x810/a7ce0d191d095c32341353270f1197e334b8b2b6.jpg')";
@@ -143,25 +143,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 bar.style.borderColor = "black";
             });
         }
-
+        //Conditional statement- if the hunger level of the tamagotchi reaches 0, the hunger status bar is hidden from the webpage. Otherwise, it's visible.
         if (hunger === 0) {
             document.getElementById("hunger").style.display = "none";
         } else {
             document.getElementById("hunger").style.display = "block";
         }
-
+        //Conditional statement- if the happiness level of the tamagotchi reaches 0, the happiness status bar is hidden from the webpage. Otherwise, it's visible.
         if (happiness === 0) {
             document.getElementById("happiness").style.display = "none";
         } else {
             document.getElementById("happiness").style.display = "block";
         }
-
+        //Conditional statement- if the health level of the tamagotchi reaches 0, the health status bar is hidden from the webpage. Otherwise, it's visible.
         if (health === 0) {
             document.getElementById("health").style.display = "none";
         } else {
             document.getElementById("health").style.display = "block";
         }
-        
+        //Conditional statement- if the energy level of the tamagotchi reaches 0, the energy status bar is hidden from the webpage. Otherwise, it's visible.
         if (energy === 0) {
             document.getElementById("energy").style.display = "none";
         } else {
@@ -222,9 +222,11 @@ document.addEventListener("DOMContentLoaded", function () {
         updateStatusBars();
     });
 
+    //creating a variable named 'tamagotchiName' based on the element in html with the ID 'tamagotchiName' and initializing it with an empty string
     const tamagotchiNameInput = document.getElementById("tamagotchiName");
     let tamagotchiName = "";
 
+    //adding an event listener so that, after the user enters in their tamagotchi's name and presses the 'enter' key, they are no longer able to type anything in to the input field
     tamagotchiNameInput.addEventListener("keydown", function (event) {
         if (event.keyCode === 13) {
             event.preventDefault();
@@ -234,18 +236,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-// Not working for some reason- age keeps counting up even after tamagotchi dies
+    // Not working for some reason- age keeps counting up even after tamagotchi dies
     const updateAge = () => {
         const hunger = tamagotchi.hunger;
         const health = tamagotchi.health;
         const happiness = tamagotchi.happiness;
 
         if (hunger < 10 || health > 0 || happiness > 0) {
-        ageInMinutes++;
-        document.getElementById("ageValue").textContent = ageInMinutes;
+            ageInMinutes++;
+            document.getElementById("ageValue").textContent = ageInMinutes;
         }
     };
 
+    //creating function to hide and display gifs based on the age of the tamagotchi in order to show the evolution from egg to caterpillar to cocoon to butterfly to a butterfly that flies off the screen as the tamagotchi ages
     const updateGifVisibility = () => {
         const egg = document.getElementById("egg");
         const caterpillar = document.getElementById("caterpillar");
@@ -257,14 +260,14 @@ document.addEventListener("DOMContentLoaded", function () {
         const health = tamagotchi.health;
         const hunger = tamagotchi.hunger;
         const energy = tamagotchi.energy;
-    
+
         // Hide all GIFs initially
         egg.style.display = "none";
         caterpillar.style.display = "none";
         cocoon.style.display = "none";
         butterfly.style.display = "none";
         win.style.display = "none";
-    
+
         // Determine which GIF to display based on Tamagotchi's age and status
         if (age < 1 && energy > 0) {
             egg.style.display = "block";
@@ -281,7 +284,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 win.style.display = "none";
             }, 5000);
         }
-
+        //this is making sure that if the tamagotchi dies, no gifs are visible
         if (happiness === 0 || health === 0 || hunger === 10) {
             egg.style.display = "none";
             caterpillar.style.display = "none";
@@ -293,17 +296,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Call the function initially
     updateGifVisibility();
-    
+
     // Update the GIF visibility whenever Tamagotchi's age changes
     const tamagotchiAgeSpan = document.getElementById("ageValue");
     tamagotchiAgeSpan.addEventListener("DOMSubtreeModified", updateGifVisibility);
-    
+
     // Call the function to check and hide GIFs whenever Tamagotchi's status changes
     const statusBars = document.querySelectorAll(".status-bar");
     statusBars.forEach(bar => {
-    bar.addEventListener("DOMSubtreeModified", updateGifVisibility);
+        bar.addEventListener("DOMSubtreeModified", updateGifVisibility);
     });
 
+    //function for welcome window and play button to make sure the game doesn't run unless the play button is clicked, and once the play button is clicked, the welcome window is hidden from view.
     const welcomeWindow = document.getElementById("welcomeWindow");
     const playButton = document.getElementById("playButton");
 
@@ -324,6 +328,7 @@ document.addEventListener("DOMContentLoaded", function () {
         activateGameFunctions();
     });
 
+    //function to control playing music if the 'soundtrack' button is clicked. For some reason, I can't get the 'stopMusic' function to work. The only way to get the music to stop playing is to refresh the page.
     let isMusicPlaying = false;
     const playMusic = () => {
         if (isMusicPlaying) return;
@@ -341,6 +346,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('soundtrackButton').textContent = 'Soundtrack';
         document.getElementById('soundtrackButton').removeEventListener('click', stopMusic);
         document.getElementById('soundtrackButton').addEventListener('click', playMusic);
-        };
-        document.getElementById('soundtrackButton').addEventListener('click', playMusic);
+    };
+    document.getElementById('soundtrackButton').addEventListener('click', playMusic);
 });
