@@ -49,9 +49,10 @@
 #butterfly,
 #win {
     position: absolute;
-    top: calc(-80px + 50%);
-    left: 50%;
-    transform: translateX(-50%);
+    top: 850px;
+    left: 46%;
+    right: 10%;
+    bottom: 10%;
     z-index: 1;
     width: 18%;
     max-width: 283.8px;
@@ -125,6 +126,41 @@
     margin-bottom: 50px;
 }
 
+.welcome-window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 192, 203, 0.8), rgba(255, 105, 108, 0.8));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.welcome-content {
+    text-align: center;
+}
+.welcome-content p {
+    font-size: 50px;
+    font-family: orbitron, sans-serif;
+    font-weight: 400;
+    padding-top: 100px;
+    padding-left: 400px;
+    padding-right: 400px;
+    color: white;
+}
+.welcome-content button {
+    background-color: hotpink;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 80px;
+    font-family: orbitron, sans-serif;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 20px;
+}
 /*Defining specific styles for the tamagotchi container.*/
 .tamagotchi {
     position: relative;
